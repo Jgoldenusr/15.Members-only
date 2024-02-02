@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title><%= title %></title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/stylesheets/bootstrap.css" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <script src="/javascripts/bootstrap.bundle.js"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <nav class="navbar navbar-light bg-light px-3 TenbyFive">
+          <a class="navbar-brand" href="/">
+            <div>
+              <img
+                src="/images/logo.png"
+                width="45"
+                height="45"
+                alt="Logo de la pagina"
+              />
+              <span>Sólo miembros.</span>
+            </div>
+          </a>
+          <h5><%= title %></h5>
+          <span>
+            <% if (currentUser) { %>
+            <a href="/create" class="btn btn-primary"> Nuevo post </a>
+            <a href="/log-out" class="btn btn-danger"> Salir </a>
+            <% } else {%>
+            <a href="/create" class="btn btn-primary disabled"> Nuevo post </a>
+            <a href="/log-in" class="btn btn-primary"> Ingresar </a>
+            <a href="/sign-up" class="btn btn-success"> Registrarse </a>
+            <% } %>
+          </span>
+        </nav>
+        <div class="col-sm-10 TenbyFive mx-auto">
+          <%- include(view, {data: data, error: error, title: title}); %>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

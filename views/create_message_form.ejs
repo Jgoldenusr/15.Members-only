@@ -1,0 +1,43 @@
+<% if(currentUser) {%>
+<div class="mt-5 text-center">
+  <h1 class="fw-bold mb-5">Postee aquí.</h1>
+  <div class="col-lg-3 mx-auto">
+    <form action="" method="POST">
+      <div class="mb-2">
+        <label for="title" class="form-label">Titulo del post</label>
+        <input
+          type="text"
+          class="form-control"
+          name="title"
+          placeholder="Titulo del post"
+          required
+        />
+      </div>
+      <div class="mb-2">
+        <label for="text">Mensaje</label>
+        <textarea
+          class="form-control"
+          id="text"
+          type="textarea"
+          name="text"
+          placeholder="Ingrese su mensaje"
+          required
+        ></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary mt-2">Postear</button>
+    </form>
+  </div>
+</div>
+<%} else {%>
+<div class="mt-5 text-center">
+  <div class="position-absolute top-50 start-50 translate-middle">
+    <img
+      src="/images/usrerror.png"
+      width="128"
+      height="128"
+      alt="Database error"
+    />
+    <h4 class="mt-3">Registrese para poder postear.</h4>
+  </div>
+</div>
+<% }%>

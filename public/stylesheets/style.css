@@ -1,0 +1,105 @@
+.TenbyFive {
+  font-family: TenbyFive;
+}
+
+.gradient {
+  background: rgb(205, 200, 200);
+  background: -moz-linear-gradient(
+    39deg,
+    rgba(205, 200, 200, 1) 0%,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    39deg,
+    rgba(205, 200, 200, 1) 0%,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  background: linear-gradient(
+    39deg,
+    rgba(205, 200, 200, 1) 0%,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#cdc8c8",endColorstr="#ffffff",GradientType=1);
+}
+
+.hoverAnim {
+  position: relative;
+}
+
+.hoverAnim:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #000000;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hoverAnim:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.hoverEffect:hover {
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+  cursor: pointer;
+}
+
+.noDeco {
+  text-decoration: none;
+}
+
+@font-face {
+  font-family: "TenbyFive";
+  src: url("../fonts/tenby-five-webfont.otf"),
+    url("../fonts/tenby-five-webfont.eot"),
+    url("../fonts/tenby-five-webfont.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/tenby-five-webfont.woff2") format("woff2"),
+    url("../fonts/tenby-five-webfont.woff") format("woff"),
+    url("../fonts/tenby-five-webfont.ttf") format("truetype"),
+    url("../fonts/tenby-five-webfont.svg#TenbyFive") format("svg");
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
